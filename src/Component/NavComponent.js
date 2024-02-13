@@ -1,5 +1,6 @@
 import React from 'react'
 import logo from '../images/af7132bdc809b77306b178eb09e94642_prev_ui.png';
+import profile from '../images/108634166-farmer-vector-icon-isolated-on-transparent-background-farmer-logo-concept_prev_ui.png';
 function NavComponent() {
     return (
         <div>
@@ -9,9 +10,10 @@ function NavComponent() {
                     Kisshan
                 </a>
                 <div>
-                    <img src='' width="30" height="30" class="d-inline-block align-top me-3" alt=""/>
+                    <img src={profile} width="30" height="30" class="d-inline-block align-top me-3" alt=""/>
                 </div>
             </nav>
+            
         </div>
     )
 }

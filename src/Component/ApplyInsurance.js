@@ -70,7 +70,9 @@ function ApplyInsurance() {
         accountnumberref.current.style.visibility = 'hidden';;
         accountnumbernumref.current.style.visibility = 'hidden';;
         assureref.current.style.visibility = 'hidden';
-        if (assure === false || newInsurance.farmername == '' || newInsurance.accountnumber.length == 12 || newInsurance.ifsccode.length == 6 || regex.test(newInsurance.farmername) == true || newInsurance.aadhaarnumber.length == 12 || newInsurance.aadhaarnumber == '' || newInsurance.medicinecategory == '' || newInsurance.medicinerate == '' || newInsurance.medicinestock == '') {
+        console.log(newInsurance.farmername.match(regex));
+        console.log(newInsurance);
+        if (assure === false ||newInsurance.accountnumber == ''|| newInsurance.farmername == '' || newInsurance.accountnumber.toString().length == 12 || newInsurance.ifsccode.toString().length == 6 || newInsurance.farmername.match(regex)==null || newInsurance.aadhaarnumber.toString().length == 12 || newInsurance.aadhaarnumber == '' || newInsurance.medicinecategory == '' || newInsurance.medicinerate == '' || newInsurance.medicinestock == '') {
             if (newInsurance.farmername == '')
                 farmernameref.current.style.visibility = 'visible'
             if (newInsurance.aadhaarnumber == '')
@@ -83,7 +85,7 @@ function ApplyInsurance() {
                 cultivatedarearef.current.style.visibility = 'visible'
             if (newInsurance.grossamount == '')
                 grossamountref.current.style.visibility = 'visible'
-            if (newInsurance.accountnumber == '')
+            if (newInsurance.accountnumber == null|| newInsurance.accountnumber=='')
                 aadhaarnumberref.current.style.visibility = 'visible'
             if (newInsurance.bankname == '')
                 banknameref.current.style.visibility = 'visible'
@@ -91,13 +93,13 @@ function ApplyInsurance() {
                 branchref.current.style.visibility = 'visible'
             if (newInsurance.ifsccode == '')
                 ifscref.current.style.visibility = 'visible'
-            if (newInsurance.aadhaarnumber.length == 12)
+            if (newInsurance.aadhaarnumber.toString().length === 12)
                 aadhaarnumberref.current.style.visibility = 'visible'
-            if (newInsurance.accountnumber.length == 12)
+            if (newInsurance.accountnumber.toString().length === 12)
                 accountnumbernumref.current.style.visibility = 'visible'
-            if (newInsurance.ifsccode.length == 6)
+            if (newInsurance.ifsccode.toString().length === 6)
                 ifscvalref.current.style.visibility = 'visible'
-            if (regex.test(newInsurance.farmername))
+            if (newInsurance.farmername.match(regex)==null)
                 farmernamecharref.current.style.visibility = 'visible'
 
             if (assure === false)
@@ -150,7 +152,7 @@ function ApplyInsurance() {
                 <div className="col-md-6 d-flex flex-column">
                     <label for="aadhaarnumber" className="form-label">Aadhaar Number</label>
                     <input type="number" className=" inputstyle" id="aadhaarnumber" value={newInsurance.aadhaarnumber}
-                        onChange={(e) => setNewInsurance({ ...newInsurance, farmername: e.target.value })}
+                        onChange={(e) => setNewInsurance({ ...newInsurance, aadhaarnumber: e.target.value })}
                     />
                     <label ref={aadhaarnumberref} className='requiredmsg' >**Required ! Must fill the field **</label>
                     <label ref={aadhaarnumbernumref} className='requiredmsg' >**12 Digits Required**</label>

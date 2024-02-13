@@ -139,7 +139,7 @@ function ApplyInsurance() {
 
     return (
         <div className='mx-5 '>
-            <h3>Apply Insurance</h3>
+            <h4>Apply Insurance</h4>
             <form className="row g-9">
                 <div className="col-md-12 d-flex flex-column">
                     <label for="farmername" className="form-label">Farmer's Name</label>
@@ -244,12 +244,11 @@ function ApplyInsurance() {
                         <input type="number" className="inputstyle" id="ifsccode" value={newInsurance.ifsccode}
                             onChange={(e) => setNewInsurance({ ...newInsurance, ifsccode: e.target.value })} />
                     </div>
-                    <label ref={ifscref} className='requiredmsg'>**Required ! Must fill the field **</label>
-                    <label ref={ifscvalref} className='requiredmsg'>** Must contain 6 digit **</label>
                 </div>
-
-
-                <div className="col-12 " style={{ marginTop: '-5vh' }}>
+                <label ref={ifscvalref} className='requiredmsg'>** Must contain 6 digit **</label>
+                    <label ref={ifscref} className='requiredmsg'>**Required ! Must fill the field **</label>
+                   
+                <div className="col-12 " style={{ marginTop: '-4.5vh' }}>
                     <div className="form-check">
                         <input className="form-check-input" type="checkbox" id="gridCheck" value={assure} onClick={(e) => { setAssure(true) }} required />
                         <label className="form-check-label" for="gridCheck">
@@ -259,7 +258,7 @@ function ApplyInsurance() {
                     </div>
                 </div>
                 <div className="col-4 ">
-                    <button type="submit" onClick={(e) => { nextDetails(newInsurance.id); e.preventDefault() }} className="btn btn-success me-2">Next</button>
+                    <button type="submit" onClick={(e) => { nextDetails(newInsurance.id); e.preventDefault() }} className="btn btn-success me-2">Apply</button>
                     <button type="submit" onClick={(e) => { clearDetails(); e.preventDefault() }} className="btn btn-warning">Clear</button>
                 </div>
 

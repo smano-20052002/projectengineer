@@ -1,5 +1,6 @@
 import React from 'react'
-import '../Style/Insurance.css'
+import '../Style/Insurance.css';
+import { Link } from 'react-router-dom';
 import claimimg from '../images/ergo-health_7-(1)_prev_ui.png';
 import applyimg from '../images/unnamed_prev_ui.png';
 import calculateimg from '../images/calculator.png';
@@ -18,7 +19,9 @@ function Insurance() {
                             </p>
                         </div>
                         <div className="ms-2 mb-2">
-                            <button className='btn btn-outline-success'>Apply Now</button>
+                        <Link to={`/apply-insurance`} className='btn btn-outline-success'>Apply Now</Link>
+
+                            
 
                         </div>
                     </div>
@@ -33,6 +36,8 @@ function Insurance() {
                         </div>
                         <div className="ms-2 mb-2">
                             <button className='btn btn-outline-success'>Calculate</button>
+                            <Link to={`/calculate-insurance`} className='btn btn-outline-success'>Calculate</Link>
+
 
                         </div>
                     </div>
@@ -49,6 +54,8 @@ function Insurance() {
                         </div>
                         <div className="ms-2 mb-2">
                             <button className='btn btn-outline-success'>Claim Now</button>
+                            <Link to={`/claim-insurance`} className='btn btn-outline-success'>Claim Now</Link>
+
 
                         </div>
                     </div>

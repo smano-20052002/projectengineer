@@ -1,24 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
-
+import 'bootstrap/dist/css/bootstrap.css';
+import NavComponent from './Component/NavComponent';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import ApplyInsurance from './Component/ApplyInsurance';
+import InsuranceCalculator from './Component/InsuranceCalculator';
+import InsuranceClaim from './Component/InsuranceClaim';
+import InsuranceDetails from './Component/InsuranceDetails';
+import Insurance from './Component/Insurance';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <NavComponent />
+      <BrowserRouter>
+        <Routes>
+         <Route path='/apply-insurance' element={<ApplyInsurance/>} />
+         <Route path='/insurance-details' element={<InsuranceDetails/>} />
+         <Route path='/claim-insurance' element={<InsuranceClaim/>} />
+         <Route path='/calculate-insurance' element={<InsuranceCalculator/>} />
+         <Route path='/insurance' element={<Insurance/>} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 

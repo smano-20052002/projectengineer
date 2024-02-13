@@ -1,0 +1,20 @@
+{
+  "insurance": [
+    {
+      "id": 1
+    },
+    {
+      "farmername": "",
+      "aadhaarnumber": "",
+      "scheme": "",
+      "croptype": "",
+      "cultivatedarea": "",
+      "grossamount": "",
+      "accountnumber": "",
+      "bankname": "",
+      "branch": "",
+      "ifsccode": "",
+      "id": 2
+    }
+  ]
+}

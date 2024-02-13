@@ -1,0 +1,26 @@
+.Main {
+    content: '';
+    background-image: url('D:/productengineering/myapp/src/images/75-752261_get-in-touch-indian-farmer-clipart_prev_ui.png');
+    background-repeat: no-repeat;
+    background-position: 50% 0%;
+    /* background-o: ; */
+    /* opacity: 0.2; */
+    position: absolute;
+    background-size: contain;
+    top: 58px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    z-index: 0;
+    background-color: #ecfee8;
+}
+/* .Main{
+    z-index: 2;
+} */
+.Sub{
+    background-color: transparent !important;
+    /* display: none; */
+}
+.card{
+    background-color: transparent !important;
+}

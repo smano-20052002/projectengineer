@@ -3,7 +3,7 @@ import { useState, useRef } from 'react';
 import '../Style/ApplyInsurance.css';
 import axios from 'axios';
 function ApplyInsurance() {
-    const [newInsurance, setNewInsurance] = useState({ farmername: '', aadhaarnumber: '', scheme: '', croptype: '', cultivatedarea: '', grossamount: '', accountnumber: '', bankname: '', branch: '', ifsccode: '' });
+    const [newInsurance, setNewInsurance] = useState({ farmername: '', aadhaarnumber: '', scheme: '', croptype: '', cultivatedarea: '', grossamount: '', accountnumber: '', bankname: '', branch: '', ifsccode: '',status:0 });
     const farmernameref = useRef();
     const farmernamecharref = useRef();
     const aadhaarnumberref = useRef();
@@ -52,7 +52,7 @@ function ApplyInsurance() {
     ]);
     const [ifscauto, setIfscauto] = useState("IFSC")
     const clearDetails = () => {
-        setNewInsurance({ farmername: '', aadhaarnumber: '', scheme: '', croptype: '', cultivatedarea: '', grossamount: '', accountnumber: '', bankname: '', branch: '', ifsccode: '' });
+        setNewInsurance({ farmername: '', aadhaarnumber: '', scheme: '', croptype: '', cultivatedarea: '', grossamount: '', accountnumber: '', bankname: '', branch: '', ifsccode: '',status:0 });
     }
     const nextDetails = () => {
         farmernameref.current.style.visibility = 'hidden';
@@ -72,7 +72,7 @@ function ApplyInsurance() {
         assureref.current.style.visibility = 'hidden';
         console.log(newInsurance.farmername.match(regex));
         console.log(newInsurance);
-        if (assure === false ||newInsurance.accountnumber == ''|| newInsurance.farmername == '' || newInsurance.accountnumber.toString().length == 12 || newInsurance.ifsccode.toString().length == 6 || newInsurance.farmername.match(regex)==null || newInsurance.aadhaarnumber.toString().length == 12 || newInsurance.aadhaarnumber == '' || newInsurance.medicinecategory == '' || newInsurance.medicinerate == '' || newInsurance.medicinestock == '') {
+        if (assure === false ||newInsurance.accountnumber == ''|| newInsurance.farmername == '' || newInsurance.accountnumber.toString().length != 12 || newInsurance.ifsccode.toString().length != 6 || newInsurance.farmername.match(regex)==null || newInsurance.aadhaarnumber.toString().length != 12 || newInsurance.aadhaarnumber == '' || newInsurance.medicinecategory == '' || newInsurance.medicinerate == '' || newInsurance.medicinestock == '') {
             if (newInsurance.farmername == '')
                 farmernameref.current.style.visibility = 'visible'
             if (newInsurance.aadhaarnumber == '')
@@ -93,11 +93,11 @@ function ApplyInsurance() {
                 branchref.current.style.visibility = 'visible'
             if (newInsurance.ifsccode == '')
                 ifscref.current.style.visibility = 'visible'
-            if (newInsurance.aadhaarnumber.toString().length === 12)
+            if (newInsurance.aadhaarnumber.toString().length != 12)
                 aadhaarnumberref.current.style.visibility = 'visible'
-            if (newInsurance.accountnumber.toString().length === 12)
+            if (newInsurance.accountnumber.toString().length != 12)
                 accountnumbernumref.current.style.visibility = 'visible'
-            if (newInsurance.ifsccode.toString().length === 6)
+            if (newInsurance.ifsccode.toString().length != 6)
                 ifscvalref.current.style.visibility = 'visible'
             if (newInsurance.farmername.match(regex)==null)
                 farmernamecharref.current.style.visibility = 'visible'
@@ -117,7 +117,7 @@ function ApplyInsurance() {
             }, 3000);
 
 
-            setNewInsurance({ farmername: '', aadhaarnumber: '', scheme: '', croptype: '', cultivatedarea: '', grossamount: '', accountnumber: '', bankname: '', branch: '', ifsccode: '' });
+            setNewInsurance({ farmername: '', aadhaarnumber: '', scheme: '', croptype: '', cultivatedarea: '', grossamount: '', accountnumber: '', bankname: '', branch: '', ifsccode: '',status:0 });
             farmernameref.current.style.visibility = 'hidden';
             farmernamecharref.current.style.visibility = 'hidden';
             aadhaarnumberref.current.style.visibility = 'hidden';
@@ -138,7 +138,8 @@ function ApplyInsurance() {
     };
 
     return (
-        <div className='mx-5 '>
+        <div className=' Main'>
+            <div className='Sub mx-5'>
             <h4>Apply Insurance</h4>
             <form className="row g-9">
                 <div className="col-md-12 d-flex flex-column">
@@ -263,6 +264,7 @@ function ApplyInsurance() {
                 </div>
 
             </form>
+            </div>
         </div>
     )
 }

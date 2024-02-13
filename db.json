@@ -15,7 +15,9 @@
       "branch": "",
       "ifsccode": "",
       "id": 2,
-      "document": ""
+      "document": "",
+      "status":2
+
     },
     {
       "farmername": "Vasan",
@@ -29,7 +31,8 @@
       "branch": "Viruthunagar",
       "ifsccode": "323231",
       "id": 3,
-      "document": ""
+      "document": "",
+      "status":1
     },
     {
       "farmername": "Vasan",
@@ -42,7 +45,9 @@
       "bankname": "Canara Bank",
       "branch": "Viruthunagar",
       "ifsccode": "22123",
-      "id": 4
+      "id": 4,
+      "status":0
+
     }
   ]
 }

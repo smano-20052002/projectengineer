@@ -1,0 +1,49 @@
+.my-table {
+
+  border-collapse: collapse;
+
+  margin-top: 4vh;
+
+  border: 1px solid black;
+
+  width: 100%;
+
+}
+
+.Main {
+  content: '';
+  background-image: url('D:/productengineering/myapp/src/images/75-752261_get-in-touch-indian-farmer-clipart_prev_ui.png');
+  background-repeat: no-repeat;
+  background-position: 50% 0%;
+  /* background-o: ; */
+  /* opacity: 0.2; */
+  position: absolute;
+  background-size: contain;
+  top: 58px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: 0;
+  background-color: #ecfee8;
+}
+
+.my-table th,
+.my-table td {
+
+  border: 1px solid #ddd;
+
+  padding: 8px;
+
+  text-align: center;
+
+}
+
+
+
+.my-table th {
+
+  background-color: #15ba5ade;
+
+  color: black;
+
+}

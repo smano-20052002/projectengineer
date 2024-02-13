@@ -7,11 +7,14 @@ function NavComponent() {
     // var popover = new bootstrap.Popover(exampleEl, options)
     return (
         <div>
-            <nav class="navbar navbar-light bg-light">
+            <nav class="navbar navbar-light bg-light d-flex justify-content-between">
                 <a class="navbar-brand" href="#">
                     <img src={logo} width="30" height="30" class="d-inline-block align-top mx-3" alt="" />
                     Kisshan
                 </a>
+                <Link to='/calculate-insurance'>Calculate</Link>
+                <Link to='/apply-insurance'>Apply Insurance</Link>
+                <Link to='/claim-insurance'>Claim Insurance</Link>
                 <div>
                     <img src={profile} width="30" height="30" class="d-inline-block align-top me-3" alt="" />
                 </div>

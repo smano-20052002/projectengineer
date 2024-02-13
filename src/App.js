@@ -16,7 +16,7 @@ function App() {
         <Routes>
          <Route path='/apply-insurance' element={<ApplyInsurance/>} />
          <Route path='/insurance-details' element={<InsuranceDetails/>} />
-         <Route path='/claim-insurance' element={<InsuranceClaim/>} />
+         <Route path='/claim-insurance/:id' element={<InsuranceClaim/>} />
          <Route path='/calculate-insurance' element={<InsuranceCalculator/>} />
          <Route path='/insurance' element={<Insurance/>} />
         </Routes>

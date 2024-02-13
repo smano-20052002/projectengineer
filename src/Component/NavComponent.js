@@ -8,8 +8,9 @@ function NavComponent() {
                     <img src={logo} width="30" height="30" class="d-inline-block align-top mx-3" alt="" />
                     Kisshan
                 </a>
+                <a className='' href='insurance-details'>Insurance Details</a>
                 <div>
-                    <img src='' width="30" height="30" class="d-inline-block align-top me-3" alt=""/>
+                    <img src='' width="30" height="30" class="d-inline-block align-top me-3" alt="" />
                 </div>
             </nav>
         </div>

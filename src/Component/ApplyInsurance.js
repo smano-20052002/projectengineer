@@ -24,31 +24,31 @@ function ApplyInsurance() {
     const [assure, setAssure] = useState(false);
     const addmsg = useRef();
     useEffect(() => {
-        if(newInsurance.bankname==''){
-            setBranchData([{ value: '', name: 'Choose Bank' } ])
+        if (newInsurance.bankname == '') {
+            setBranchData([{ value: '', name: 'Choose Bank' }])
         }
-        if(newInsurance.bankname=='State Bank of India'){
+        if (newInsurance.bankname == 'State Bank of India') {
             setIfscauto("SBI");
-            setBranchData([{ value: 'Viruthunagar', name: 'Viruthunagar' },{value: 'Chennai', name: 'Chennai'} ])
+            setBranchData([{ value: 'Viruthunagar', name: 'Viruthunagar' }, { value: 'Chennai', name: 'Chennai' }])
         }
-        if(newInsurance.bankname=='HDFC'){
+        if (newInsurance.bankname == 'HDFC') {
             setIfscauto("HDFC");
-            setBranchData([{ value: 'Viruthunagar', name: 'Viruthunagar' },{value: 'Chennai', name: 'Chennai'},{ value: 'Tirunelveli', name: 'Tirunelveli' } ])
+            setBranchData([{ value: 'Viruthunagar', name: 'Viruthunagar' }, { value: 'Chennai', name: 'Chennai' }, { value: 'Tirunelveli', name: 'Tirunelveli' }])
         }
-        if(newInsurance.bankname=='ICIC'){
+        if (newInsurance.bankname == 'ICIC') {
             setIfscauto("ICIC");
-            setBranchData([{ value: 'Viruthunagar', name: 'Viruthunagar' },{value: 'Chennai', name: 'Chennai'},{ value: 'Tirunelveli', name: 'Tirunelveli' },{value: 'Tenkasi', name: 'Tenkasi'}  ])
+            setBranchData([{ value: 'Viruthunagar', name: 'Viruthunagar' }, { value: 'Chennai', name: 'Chennai' }, { value: 'Tirunelveli', name: 'Tirunelveli' }, { value: 'Tenkasi', name: 'Tenkasi' }])
         }
-        if(newInsurance.bankname=='Axis Bank'){
+        if (newInsurance.bankname == 'Axis Bank') {
             setIfscauto("AXIS");
-            setBranchData([{ value: 'Viruthunagar', name: 'Viruthunagar' },{value: 'Chennai', name: 'Chennai'}  ])
+            setBranchData([{ value: 'Viruthunagar', name: 'Viruthunagar' }, { value: 'Chennai', name: 'Chennai' }])
         }
-        if(newInsurance.bankname=='Canara Bank'){
-            setBranchData([{ value: 'Viruthunagar', name: 'Viruthunagar' },{value: 'Chennai', name: 'Chennai'}  ])
+        if (newInsurance.bankname == 'Canara Bank') {
+            setBranchData([{ value: 'Viruthunagar', name: 'Viruthunagar' }, { value: 'Chennai', name: 'Chennai' }])
         }
     })
-    const [branchData,setBranchData] = useState([
-        { value: '', name: 'Choose Bank' }          
+    const [branchData, setBranchData] = useState([
+        { value: '', name: 'Choose Bank' }
     ]);
     const [ifscauto, setIfscauto] = useState("IFSC")
     const clearDetails = () => {
@@ -70,7 +70,7 @@ function ApplyInsurance() {
         accountnumberref.current.style.visibility = 'hidden';;
         accountnumbernumref.current.style.visibility = 'hidden';;
         assureref.current.style.visibility = 'hidden';
-        if (assure === false || newInsurance.farmername == '' || newInsurance.accountnumber.length == 12 || newInsurance.ifsccode.length == 6 || regex.test(newInsurance.farmername) == true || newInsurance.aadhaarnumber.length == 12 || newInsurance.aadhaarnumber == '' || newInsurance.medicinecategory == '' || newInsurance.medicinerate == '' || newInsurance.medicinestock == '') {
+        if (assure === false || newInsurance.farmername == '' || newInsurance.accountnumber.length != 12 || newInsurance.ifsccode.length != 6 || regex.test(newInsurance.farmername) == true || newInsurance.aadhaarnumber.length != 12 || newInsurance.aadhaarnumber == '' || newInsurance.medicinecategory == '' || newInsurance.medicinerate == '' || newInsurance.medicinestock == '') {
             if (newInsurance.farmername == '')
                 farmernameref.current.style.visibility = 'visible'
             if (newInsurance.aadhaarnumber == '')
@@ -91,11 +91,11 @@ function ApplyInsurance() {
                 branchref.current.style.visibility = 'visible'
             if (newInsurance.ifsccode == '')
                 ifscref.current.style.visibility = 'visible'
-            if (newInsurance.aadhaarnumber.length == 12)
+            if (newInsurance.aadhaarnumber.length != 12)
                 aadhaarnumberref.current.style.visibility = 'visible'
-            if (newInsurance.accountnumber.length == 12)
+            if (newInsurance.accountnumber.length != 12)
                 accountnumbernumref.current.style.visibility = 'visible'
-            if (newInsurance.ifsccode.length == 6)
+            if (newInsurance.ifsccode.length != 6)
                 ifscvalref.current.style.visibility = 'visible'
             if (regex.test(newInsurance.farmername))
                 farmernamecharref.current.style.visibility = 'visible'
@@ -150,7 +150,7 @@ function ApplyInsurance() {
                 <div className="col-md-6 d-flex flex-column">
                     <label for="aadhaarnumber" className="form-label">Aadhaar Number</label>
                     <input type="number" className=" inputstyle" id="aadhaarnumber" value={newInsurance.aadhaarnumber}
-                        onChange={(e) => setNewInsurance({ ...newInsurance, farmername: e.target.value })}
+                        onChange={(e) => setNewInsurance({ ...newInsurance, aadhaarnumber: e.target.value })}
                     />
                     <label ref={aadhaarnumberref} className='requiredmsg' >**Required ! Must fill the field **</label>
                     <label ref={aadhaarnumbernumref} className='requiredmsg' >**12 Digits Required**</label>

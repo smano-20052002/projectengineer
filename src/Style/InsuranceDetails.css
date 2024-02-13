@@ -1,0 +1,17 @@
+.my-table {
+    border-collapse: collapse;
+    margin-top: 4vh ;
+    border: 1px solid black;
+    width: 100%;
+  }
+   
+  .my-table th, .my-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+   
+  .my-table th {
+    background-color: #15ba5ade;
+    color: black;
+  }

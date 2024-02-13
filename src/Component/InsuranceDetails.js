@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import '../Style/InsuranceDetails.css'
+import { Link, useParams } from "react-router-dom";
 function InsuranceDetails() {
   const [data, setData] = useState([])
+
   useEffect(() => {
-    axios.get('http://localhost:3001/insurance')
+    axios.get('http://localhost:3001/insurance/')
       .then(res => setData(res.data))
       .catch(err => console.log(err));
   }, [])
@@ -14,7 +16,7 @@ function InsuranceDetails() {
       <table className='my-table'>
         <thead>
           <tr>
-            <th>SNo</th>
+            <th>Id</th>
             <th>Farmer Name</th>
             <th>Aadhar Number</th>
             <th>Insurance Scheme</th>
